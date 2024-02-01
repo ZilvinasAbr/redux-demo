@@ -1,10 +1,12 @@
 import './App.css';
-import { Counter } from './toolkit-slices/Counter';
+import { Button } from './components/ui/button';
+import { Counter } from './redux-toolkit/Counter';
 
 function App() {
   return (
     <>
       <Counter />
+      <Button variant="outline">Button</Button>
     </>
   );
 }
