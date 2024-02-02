@@ -1,10 +1,19 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { Reducer, UnknownAction, configureStore } from '@reduxjs/toolkit';
 import { reduxToolkitSlice } from '../redux-toolkit/slice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { api } from '../rtk-query/api';
+import {
+  ReducerState,
+  reducer as plainReduxReducer,
+} from '@/plain-redux/reducer';
 
 export const store = configureStore({
   reducer: {
+    plainRedux: plainReduxReducer as Reducer<
+      ReducerState,
+      UnknownAction,
+      ReducerState
+    >,
     reduxToolkit: reduxToolkitSlice.reducer,
     [api.reducerPath]: api.reducer,
   },

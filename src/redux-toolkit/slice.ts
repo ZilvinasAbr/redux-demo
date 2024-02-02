@@ -33,3 +33,5 @@ export const reduxToolkitSlice = createSlice({
     },
   },
 });
+
+export const actions = reduxToolkitSlice.actions;

@@ -9,7 +9,7 @@ export const useGetRandomDogsQuery = (
 ) => {
   const dispatch = useDispatch<AppDispatch>();
   const { dogUrls, error, isLoading } = useSelector(
-    (state: RootState) => state.reduxToolkit,
+    (state: RootState) => state.plainRedux,
   );
 
   useEffect(() => {

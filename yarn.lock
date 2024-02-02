@@ -1911,10 +1911,10 @@ type-fest@^0.20.2:
   resolved "https://artifactory.us.bank-dns.com:5000/artifactory/api/npm/registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha1-G/IH9LKPkVg2ZstfvTJ4hzAc1fQ=
 
-typesafe-actions@^5.1.0:
-  version "5.1.0"
-  resolved "https://artifactory.us.bank-dns.com:5000/artifactory/api/npm/registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-5.1.0.tgz#9afe8b1e6a323af1fd59e6a57b11b7dd6623d2f1"
-  integrity sha1-mv6LHmoyOvH9WealexG33WYj0vE=
+typesafe-actions@4.4.2:
+  version "4.4.2"
+  resolved "https://artifactory.us.bank-dns.com:5000/artifactory/api/npm/registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-4.4.2.tgz#8f817c479d12130b5ebb442032968b2a18929e1a"
+  integrity sha1-j4F8R50SEwteu0QgMpaLKhiSnho=
 
 typescript@^5.2.2:
   version "5.3.3"
