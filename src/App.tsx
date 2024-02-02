@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { TypographyH1 } from './components/ui/typography-h1';
-import { Dogs } from './rtk-query/Dogs';
+import { Dogs as RTKQueryDogs } from './rtk-query/Dogs';
+import { Dogs as ReduxToolkitDogs } from './redux-toolkit/Dogs';
 import { Label } from './components/ui/label';
 import { NumberInput } from './components/number-input';
+import { TypographyH2 } from './components/ui/typography-h2';
 
 function App() {
   const [amount, setAmount] = useState('10');
@@ -20,7 +22,16 @@ function App() {
           onChange={setAmount}
         />
       </div>
-      <Dogs amount={+amount} />
+      <div className="flex justify-between w-[65%]">
+        <div>
+          <TypographyH2>RTKQuery Example</TypographyH2>
+          <RTKQueryDogs amount={+amount} />
+        </div>
+        <div>
+          <TypographyH2>Redux Toolkit Example</TypographyH2>
+          <ReduxToolkitDogs amount={+amount} />
+        </div>
+      </div>
     </div>
   );
 }

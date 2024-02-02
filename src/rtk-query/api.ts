@@ -1,18 +1,14 @@
+import { DogsResponse } from '@/common/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-type Response = {
-  message: string[];
-  status: string;
-};
-
 export const api = createApi({
-  reducerPath: 'api',
+  reducerPath: 'rtk-query-api',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dog.ceo/api/' }),
   endpoints: (builder) => ({
-    getRandomWesthighlandTerriers: builder.query<Response, number>({
-      query: (amount) => `breed/terrier/westhighland/images/random/${amount}`,
+    getRandomDogs: builder.query<DogsResponse, number>({
+      query: (amount) => `breeds/image/random/${amount}`,
     }),
   }),
 });
 
-export const { useGetRandomWesthighlandTerriersQuery } = api;
+export const { useGetRandomDogsQuery } = api;

@@ -1,5 +1,5 @@
 import { ImagesContainer } from '@/components/images-container';
-import { useGetRandomDogsQuery } from './api';
+import { useGetRandomDogsQuery } from './useGetRandomDogsQuery';
 
 export const Dogs = ({ amount }: { amount: number }) => {
   const { data, error, isLoading } = useGetRandomDogsQuery(amount, {
@@ -18,5 +18,5 @@ export const Dogs = ({ amount }: { amount: number }) => {
     return <div>Error</div>;
   }
 
-  return <ImagesContainer imageUrls={data.message} />;
+  return <ImagesContainer imageUrls={data} />;
 };

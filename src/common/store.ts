@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterSlice } from '../redux-toolkit/slice';
+import { reduxToolkitSlice } from '../redux-toolkit/slice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { api } from '../rtk-query/api';
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer,
+    reduxToolkit: reduxToolkitSlice.reducer,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>

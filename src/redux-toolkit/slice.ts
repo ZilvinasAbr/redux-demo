@@ -1,30 +1,35 @@
+import { DogsResponse } from '@/common/types';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface CounterState {
-  value: number;
+export interface DogsState {
+  dogUrls: string[] | null;
+  isLoading: boolean;
+  error: string | null;
 }
 
-const initialState: CounterState = {
-  value: 0,
+const initialState: DogsState = {
+  dogUrls: null,
+  isLoading: false,
+  error: null,
 };
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const reduxToolkitSlice = createSlice({
+  name: 'redux-toolkit-example',
   initialState,
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
+    getDogs: (state) => {
+      state.isLoading = true;
+      state.error = null;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    getDogsSuccess: (state, action: PayloadAction<DogsResponse>) => {
+      state.isLoading = false;
+      state.dogUrls = action.payload.message;
     },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    getDogsFailure: (state, action: PayloadAction<string>) => {
+      state.isLoading = false;
+      state.dogUrls = null;
+      state.error = action.payload;
     },
   },
 });
