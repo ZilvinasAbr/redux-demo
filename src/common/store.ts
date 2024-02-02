@@ -1,11 +1,11 @@
 import { Reducer, UnknownAction, configureStore } from '@reduxjs/toolkit';
-import { reduxToolkitSlice } from '../redux-toolkit/slice';
+import { reduxToolkitSlice } from '../redux-toolkit/single-file';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { api } from '../rtk-query/api';
+import { api } from '../rtk-query/single-file';
 import {
   ReducerState,
   reducer as plainReduxReducer,
-} from '@/plain-redux/reducer';
+} from '@/plain-redux/single-file';
 
 export const store = configureStore({
   reducer: {

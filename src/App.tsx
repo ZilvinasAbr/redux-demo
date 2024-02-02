@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { TypographyH1 } from './components/ui/typography-h1';
-import { Dogs as PlainReduxDogs } from './plain-redux/Dogs';
-import { Dogs as RTKQueryDogs } from './rtk-query/Dogs';
-import { Dogs as ReduxToolkitDogs } from './redux-toolkit/Dogs';
+import { Dogs as PlainReduxDogs } from './plain-redux/single-file';
+import { Dogs as RTKQueryDogs } from './rtk-query/single-file';
+import { Dogs as ReduxToolkitDogs } from './redux-toolkit/single-file';
 import { Label } from './components/ui/label';
 import { NumberInput } from './components/number-input';
 import { TypographyH2 } from './components/ui/typography-h2';
@@ -11,7 +11,7 @@ function App() {
   const [amount, setAmount] = useState('10');
 
   return (
-    <div className="flex flex-col items-center gap-4 mx-8">
+    <div className="flex flex-col items-center gap-4 mx-8 py-4">
       <TypographyH1>Random Dogs</TypographyH1>
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="amount">Amount</Label>
