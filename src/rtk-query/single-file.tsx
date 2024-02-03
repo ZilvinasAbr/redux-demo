@@ -10,6 +10,7 @@ export const api = createApi({
   endpoints: (builder) => ({
     getRandomDogs: builder.query<DogsResponse, number>({
       query: (amount) => `breeds/image/random/${amount}`,
+      keepUnusedDataFor: 0,
     }),
   }),
 });
